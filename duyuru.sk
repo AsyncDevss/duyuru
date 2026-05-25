@@ -1,0 +1,15 @@
+
+options:
+    duyuru: &6&lDUYURU »
+    duyuruyetki: duyuru.yetki
+    yetkiyok: &cBu Komutu Kullanmak İçin Yetkiniz Bulunmamaktadır!
+    
+
+command /duyuru [<text>]:
+    permission: {@duyuruyetki}
+    permission message: {@yetkiyok}
+    trigger:
+        if arg-1 is not set:
+            send "{@duyuru} Duyurmak İçin Birşeyler Yazmalısın"
+        else:   
+            broadcast "{@duyuru} &b&l%arg-1%"
